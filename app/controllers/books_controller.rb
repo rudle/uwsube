@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
-    @books = Book.find(:all)
+    @books = Book.search params[:search]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,20 +10,19 @@ class BooksController < ApplicationController
     end
   end
 
+  def list
+    @books = Books.search params[:search]
+  end
+
   # GET /books/1
   # GET /books/1.xml
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @book }
     end
-  end
-
-  def search
-    query = params[:q]
-    @books = Book.find(:all, :conditions => ["title = ?", query])
   end
 
   # GET /books/new

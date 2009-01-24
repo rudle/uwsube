@@ -1,2 +1,7 @@
 <h1> Welcome to UWSUBE</h1>
 <%= link_to "The books!", books_path %>
+
+<form>
+  <%= text_field(:search, books_path) %>
+  <%= link_to 'Search', books_path %>
+</form>

@@ -1,8 +1,12 @@
-require 'search'
 
 class Book < ActiveRecord::Base
   validates_presence_of :title, :author
   validates_length_of :isbn, :minimum => 11
 
-  searches_on :all
+  define_index do
+    #fields
+    indexes :title, :sortable => true 
+    indexes :author, :sortable => true 
+    indexes :description
+  end
 end
