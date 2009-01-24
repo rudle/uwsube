@@ -1,4 +1,4 @@
-<h1>Listing books</h1>
+<h1>Search Results - Books </h1>
 
 <table>
   <tr>
@@ -23,9 +23,7 @@
 
 <br />
 
-
-
 <form>
-  <%= text_field(:search, nil) %>
+  <%= text_field(:search, nil, :value => "Search") %>
 </form>
 <%= link_to 'New book', new_book_path %>

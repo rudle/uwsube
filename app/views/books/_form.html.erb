@@ -1,24 +1,25 @@
 
 <% form_for(@book) do |f| %>
   <%= f.error_messages %>
-
-  <p>
+  <div id="menu_title">
+    <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
-  </p>
-  <p>
+    </p>
+    <p>
     <%= f.label :author %><br />
     <%= f.text_field :author %>
-  </p>
-  <p>
+    </p>
+    <p>
     <%= f.label :isbn %><br />
     <%= f.text_field :isbn %>
-  </p>
-  <p>
+    </p>
+    <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </p>
-  <p>
+    </p>
+    <p>
     <%= f.submit "Create" %>
-  </p>
+    </p>
+  </div>
 <% end %>

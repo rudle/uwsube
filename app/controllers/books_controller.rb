@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     if (@books.size == 0)  
         flash[:notice] = 'No results found, please try again'
     else
+      flash[:notice] = 'Results for ' + params[:search].to_s
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @books }
