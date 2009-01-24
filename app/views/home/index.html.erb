@@ -1,10 +1,9 @@
 <h1> Welcome to UWSUBE</h1>
-
-
+<a href="../navbar.html.erb" />
 <form>
   <%= text_field(:search, nil) %>
 </form>
-
+<body>
 <table>
   <h3> Our latest entries </h3>
   <tr>
@@ -25,5 +24,7 @@
     <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+
 </table>
 
+<body>

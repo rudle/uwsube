@@ -1,4 +1,3 @@
-
 class Book < ActiveRecord::Base
   validates_presence_of :title, :author
   validates_length_of :isbn, :minimum => 11

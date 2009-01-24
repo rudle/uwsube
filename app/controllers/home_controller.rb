@@ -6,7 +6,4 @@ class HomeController < ApplicationController
     @books = Book.find(:all)
   end
 
-  def show
-    redirect_to books_path
-  end
 end

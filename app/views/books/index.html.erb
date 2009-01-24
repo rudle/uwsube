@@ -1,5 +1,8 @@
 <h1>Search Results - Books </h1>
-
+<body>
+<form>
+  <%= text_field(:search, nil, :value => "Search") %>
+</form>
 <table>
   <tr>
     <th>Title</th>
@@ -20,10 +23,8 @@
   </tr>
 <% end %>
 </table>
-
+</div>
+</body>
 <br />
 
-<form>
-  <%= text_field(:search, nil, :value => "Search") %>
-</form>
 <%= link_to 'New book', new_book_path %>
