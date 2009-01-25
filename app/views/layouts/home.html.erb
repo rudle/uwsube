@@ -12,7 +12,7 @@
 <div id="navbar">
 <ul id="navbar">
   <li> <%= link_to 'Books', books_path %>  </li>
-  <li><a href="#">Link two</a></li>
+  <li><%=  link_to 'My books', books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?  %>
   <li><%= link_to 'Login', login_path %>
   <li><%= link_to 'Sign up', signup_path %>
 </ul>

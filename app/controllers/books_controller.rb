@@ -5,10 +5,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
-    if (params[:search].nil?) 
-      @books = Book.find :all
-    else 
+    if (!params[:search].nil?) 
       @books = Book.search params[:search]
+    else 
+      if (!params[:uid].nil?)
+        @books = Book.find(:all, :conditions => ['user_id = '+ params[:uid].to_s])
+      else
+      @books = Book.find :all
+      end
     end
     if (@books.size == 0)  
     else
@@ -26,7 +30,12 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.xml
   def show
-    @book = Book.find params[:id]
+    if (params[:uid].nil?) #Find all books
+      @book = Book.find params[:id]
+    else #Find users books
+      @book = Book.find params[:id], :conditions => ['user_id = ?', current_user.id]
+      flash[:notice] = 'Your books'
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -8,8 +8,8 @@
     <th>Title</th>
     <th>Author</th>
     <th>ISBN</th>
-    <th>User</th>
     <th>Description</th>
+    <th>User ID</th>
   </tr>
 
 <% for book in @books %>
@@ -17,11 +17,18 @@
     <td><%=h book.title %></td>
     <td><%=h book.author %></td>
     <td><%=h book.isbn %></td>
-    <td><%=h book.user_id  %></td> 
     <td><%=h book.description %></td>
+    <td> <%=h book.user_id  %> </td>
     <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <% if current_user.id == book.user_id %>
+      <td>
+        <%= link_to 'Edit', edit_book_path(book) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>
