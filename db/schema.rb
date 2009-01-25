@@ -9,17 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090124202203) do
+ActiveRecord::Schema.define(:version => 20090125050600) do
 
   create_table "books", :force => true do |t|
-    t.string   "title"
+    t.string   "title",       :null => false
     t.string   "author"
-    t.string   "isbn"
-    t.integer  "uid"
+    t.string   "isbn",        :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "books", ["user_id"], :name => "fk_books_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
@@ -32,7 +34,5 @@ ActiveRecord::Schema.define(:version => 20090124202203) do
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
   end
-
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

@@ -37,7 +37,7 @@ class BooksController < ApplicationController
   # GET /books/new
   # GET /books/new.xml
   def new
-    @book = Book.new
+    @book = Book.new 
 
     respond_to do |format|
       format.html # new.html.erb
@@ -54,10 +54,11 @@ class BooksController < ApplicationController
   # POST /books.xml
   def create
     @book = Book.new(params[:book])
+    flash[:notice] = params[:uid]
+    @book.user_id = params[:uid]
 
     respond_to do |format|
       if @book.save
-        flash[:notice] = 'Book was successfully created.'
         format.html { redirect_to(@book) }
         format.xml  { render :xml => @book, :status => :created, :location => @book }
       else
