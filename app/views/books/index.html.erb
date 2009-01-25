@@ -17,7 +17,7 @@
     <td><%=h book.title %></td>
     <td><%=h book.author %></td>
     <td><%=h book.isbn %></td>
-    <td><%=h book.user_id %></td>
+    <td><%=h book.user_id  %></td> 
     <td><%=h book.description %></td>
     <td><%= link_to 'Show', book %></td>
     <td><%= link_to 'Edit', edit_book_path(book) %></td>
@@ -29,4 +29,4 @@
 </body>
 <br />
 
-<%= link_to 'New book', new_book_path + "?uid[]=" + current_user.id.to_s %>
+<%= link_to 'New book', new_book_path%> 

@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+
   belongs_to :user
 
   validates_presence_of :title, :author
@@ -11,5 +12,6 @@ class Book < ActiveRecord::Base
     indexes :user_id, :sortable => true
     indexes :description
   end
+
 
 end

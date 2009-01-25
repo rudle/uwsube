@@ -54,8 +54,7 @@ class BooksController < ApplicationController
   # POST /books.xml
   def create
     @book = Book.new(params[:book])
-    flash[:notice] = params[:uid]
-    @book.user_id = params[:uid]
+    @book.user_id = current_user.id
 
     respond_to do |format|
       if @book.save
