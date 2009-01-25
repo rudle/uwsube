@@ -1,16 +1,21 @@
 class BooksController < ApplicationController
+  before_filter :login_required, :only => :new
+  before_filter :store_location
+
   # GET /books
   # GET /books.xml
   def index
-    @books = Book.search params[:search]
+    if (params[:search].nil?) 
+      @books = Book.find :all
+    else 
+      @books = Book.search params[:search]
+    end
     if (@books.size == 0)  
-        flash[:notice] = 'No results found, please try again'
     else
-      flash[:notice] = 'Results for ' + params[:search].to_s
-      respond_to do |format|
+        respond_to do |format|
         format.html # index.html.erb
-        format.xml  { render :xml => @books }
-      end
+      format.xml  { render :xml => @books }
+    end
     end
   end
 
