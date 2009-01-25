@@ -6,10 +6,17 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>UWSUBE: UW Student Underground Book Exchange</title>
   <%= stylesheet_link_tag 'base' %>
-  <%= stylesheet_link_tag 'navbar' %>
 </head>
 <body>
 
+<div id="navbar">
+<ul id="navbar">
+  <li> <%= link_to 'Books', books_path %>  </li>
+  <li><a href="#">Link two</a></li>
+  <li><%= link_to 'Login', login_path %>
+  <li><%= link_to 'Sign up', signup_path %>
+</ul>
+</div>
 
 
 

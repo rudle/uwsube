@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  belongs_to :user, :foreign_key => 'uid'
+
   validates_presence_of :title, :author
   validates_length_of :isbn, :minimum => 11
 

@@ -236,6 +236,10 @@ background-color: #ccc;
 }
 div.mybutton a:hover { background-color: #ddd; } 
 
+.right { text-align: right }
+.center { text-align: center }
+.left { text-align: left }
+
 
 /* -- specifics for my_postings -- */
 .desc { /*font-style: italic;*/ }
@@ -360,3 +364,22 @@ display:block;
 padding:6px 3px 7px 3px;
 }
 
+div#navbar a { 
+  float:left;
+  width:25%;
+  text-decoration:none;
+  color:white;
+  background-color:purple;
+  padding:0 0;
+  border-right:0px solid white;
+}
+div#navbar ul {
+  float:left;
+  width:100%;
+  padding:0;
+  margin:0;
+  list-style-type:none;
+}
+
+div#navbar a:hover {background-color: #ff3300}
+div#navbar.li {display:inline}

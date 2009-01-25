@@ -8,6 +8,17 @@
   <%= stylesheet_link_tag 'base' %>
 </head>
 <body>
+<div id="navbar">
+<ul id="navbar">
+  <li> <%= link_to 'Books', books_path %>  </li>
+  <li><%=  link_to 'My books', '404.html' %>
+  <li><%= link_to 'Login', login_path %>
+  <li><%= link_to 'Sign up', signup_path %>
+</ul>
+</div>
+  <p> <% if logged_in? %> <%= link_to 'Logout', logout_path %>
+  <% else %> <%= link_to 'Login', login_path %> Or <%= link_to 'Signup', signup_path %>
+  <% end %>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
