@@ -25,14 +25,16 @@
         <td><%=h book.isbn %></td>
         <td><%=h book.description %></td>
         <td><%= link_to 'Show', book %></td>
-        <% if current_user.id == book.user_id %>
-          <td>
-            <%= link_to 'Edit', edit_book_path(book) %>
-          </td>
-          <td>
-            <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-          </td>
-        </tr>
+        <% if !current_user.nil? %>
+          <% if current_user.id == book.user_id %>
+            <td>
+              <%= link_to 'Edit', edit_book_path(book) %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     <% end %>
 
