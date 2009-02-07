@@ -18,5 +18,5 @@
   <%=h @book.description %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Edit', edit_book_path(@book) unless current_user.blank? or current_user.id != @book.user_id %> 
 <%= link_to 'Back', books_path %>

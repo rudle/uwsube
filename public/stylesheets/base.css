@@ -1,377 +1,10 @@
-html {
-height:100%;
-background-color: white;
-}
-
-body {
-text-align:center; /* for IE */
-font-family: Verdana, Arial, Helvetica, sans-serif;
-font-size: 13px;
-height:100%;
-background-color: white;
-}
-
-div#container {
-text-align:left; /* reset text alignment */
-width:753px;
-margin:0 auto; /* for the rest */
-} 
-
-div#top {
-clear: both;
-width: 100%;
-margin-bottom:3px;
-}
-
-div#divider {
-background-image: url(images/side1.gif);
-width: 100%;
-background-repeat: repeat-y;
-border-bottom:1px solid white;
-}
-
-div#left {
-float: left;
-width: 202px;
-}
-
-div#content {
-float: right;
-width: 538px;
-background-position: bottom left;
-background-repeat: no-repeat;
-min-height:440px;
-}
-
-div#bottom {
-clear: both;
-width: 100%;
-padding-top:9px;
-margin-top:5px;
-background-image: url(images/bot_banner.jpg);
-background-repeat: repeat-x;
-}
-
-p, h1, h2, h3, h4, form {
-margin: 0 0 0 0;
-padding: 0 0 0 0;
-}
-
-img {
-margin-bottom:-3px;
-border:0;
-}
-
-div.menu_title {
-font-size: 15px;
-clear:both;
-text-align:center;
-padding:10px 0px 15px 0;
-}
-
-div.row {
-clear: both;
-padding-bottom: 7px;
-}
-
-div#left_courseware {
-text-align: center;
-}
-
-div#left_courseware div.row label {
-padding-top:3px;
-float: left;
-width: 38%;
-text-align: right;
-}
-
-div#left_courseware div.row span.formf {
-float: right;
-width: 60%;
-text-align: left;
-}
-
-div#left_housing div.row label {
-padding-top:3px;
-float: left;
-width: 50%;
-text-align: right;
-}
-
-div#left_housing div.row span.formf {
-float: right;
-width: 45%;
-text-align: left;
-}
-
-div.post_entry {
-width: 263px;
-float:left;
-}
-
-div.post_entry h4{
-font-size:12px;
-text-align:center;
-}
-
-div.post_entry div.row label {
-padding-top:3px;
-float: left;
-width: 35%;
-text-align: right;
-}
-
-div.post_entry div.row span.formf {
-float: right;
-width: 60%;
-text-align: left;
-}
-
-div.post_entry_desc {
-width: 100%;
-float:left;
-}
-
-div.post_entry_desc div.row label {
-padding-top:3px;
-float: left;
-width: 92px;
-text-align: right;
-}
-
-div.post_entry_desc div.row span.formf {
-float: right;
-width: 433px;
-text-align: left;
-}
-
-div.formcenter {
-width:440px;
-}
-
-div.formcenter div.row label {
-padding-top:3px;
-float: left;
-width: 35%;
-text-align: right;
-}
-
-div.formcenter div.row span.formf {
-float: right;
-width: 60%;
-text-align: left;
-}
-
-div.clear {
-  clear:both;
-}
-
-p {
-padding-bottom:10px;
-}
-
-select {
-height:20px;
-}
-
-span.red {
-color: red;
-}
-
-div.center {
-text-align:center;
-width:100%;
-}
-
-h1 {
-text-align: center;
-color: #75C147;
-margin: 10px 0px 10px 0px;
-font-size:22px;
-}
-
-h2.sub {
-text-align: center;
-color: #75C147;
-margin: 10px 0px 10px 0px;
-font-size:10px;
-}
-
-h1.menu_title {
-text-align: center;
-color: #000000;
-margin: 10px 0px 10px 0px;
-font-size: 20px;
-font-weight: lighter;
-}
-
-div.menu_sub {
-margin:0 auto 10px;
-width:50%;
-text-align:center;
-padding: 3px 0px 3px 5px;
-border-bottom:1px solid gray;
-}
-
-h2.mycat {
-font-size: 14px;
-font-weight: bold;
-color: black;
-background: #eee;
-border-top: 1px solid black;
-padding: 1px
-}
-
-div.mybutton a {
-border-style: outset;
-border-color: #dcdcdc;
-text-align: center;
-font-size: x-small;
-color: black;
-padding:1px 2px 1px 2px;
-border-width: 1px 1px 1px 1px;
-text-decoration: none;
-display: block;
-background-color: #ccc;
-}
-div.mybutton a:hover { background-color: #ddd; } 
-
-.right { text-align: right }
-.center { text-align: center }
-.left { text-align: left }
-
-
-/* -- specifics for my_postings -- */
-.desc { /*font-style: italic;*/ }
-.details { padding: 0; }
-table.mypost td {
-border-bottom: 1px solid #D4D0C8; /* light grey */
-padding-bottom: 2px;
-font-size:10px;
-width:100%;
-}
-table.mypost tr td h3 {
-font-size:14px;
-font-weight: bold;
-}
-
-table.search thead td {
-font-size:12px;
-text-decoration: underline;
-border:1px solid #D4D0C8;
-text-align:center;
-}
-
-table.search {
-font-size:10px;
-width:100%;
-border:1px solid #D4D0C8;
-border-collapse: collapse;
-margin:10px 0;
-}
-
-table.search td {
-padding: 5px;
-}
-
-table.search h3 {
-font-size: 15px;
-}
-
-table.search td {
-border-bottom:1px solid #D4D0C8;
-border-top:1px solid #D4D0C8;
-}
-
-p.msg {
-border:1px solid #D4D0C8;
-padding:5px 5px 5px 5px;
-margin:0 auto 15px;
-text-align:center;
-}
-
-div.hidden {
-height: 0px;
-width: 0px;
-overflow: hidden;
-}
-
-.style1 {
-color: #FF0000;
-font-weight: bold;
-}
-.style2 {
-color: #0000FF;
-font-weight: bold;
-}
-
-#nav, #nav ul { /* all lists */
-padding: 0;
-margin: 0;
-list-style: none;
-line-height: 1em;
-}
-
-#nav a {
-display: block;
-}
-
-#nav li { /* all list items */
-float: left;
-}
-
-#nav li ul { /* second-level lists */
-position: absolute;
-background: #75C147;
-width: 165px;
-z-index: 10;
-left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
-}
-
-#nav li ul li { /* second-level lists */
-clear:both;
-padding:3px;
-padding-left:7px;
-width:100%;
-border-bottom:1px solid white;
-}
-
-#nav li ul li a { /* second-level lists */
-text-decoration:none;
-color:white;
-font-weight:bold;
-font-size:13px;
-display: block;
-width:100%;
-line-height:15px;
-}
-
-#nav li:hover ul { /* lists nested under hovered list items */
-left: auto;
-}
-
-div#supporters {
-float:right;
-margin-top:2px;
-margin-right:10px;
-border:1px solid #75C147;
-}
-
-div#supporters a {
-color:#325781;
-text-decoration:none;
-display:block;
-padding:6px 3px 7px 3px;
-}
-
 div#navbar a { 
   float:left;
-  width:25%;
+  width:50%;
   text-decoration:none;
   color:white;
-  background-color:purple;
+  background-color: #21474C;
   padding:0 0;
-  border-right:0px solid white;
 }
 div#navbar ul {
   float:left;
@@ -381,5 +14,73 @@ div#navbar ul {
   list-style-type:none;
 }
 
-div#navbar a:hover {background-color: #ff3300}
+div#navbar a:hover {background-color: #395C63}
 div#navbar.li {display:inline}
+
+#sidenav {
+  position: absolute;
+  left: 0px;
+  top: 10%;
+  width 15%;
+  height 100%;
+  text-align: left;
+}
+
+div#content tr,td,table,th {
+  top: 0px;
+  margin : 0px 0px 0px 0px;
+  padding : 3px;
+  float:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  color: #61B4BF
+}
+
+h1,h2,h3 {
+  color : #82B8BF;
+  text-align: center;
+}
+
+form, label, input {
+  margin: 0px auto;
+  float:center;
+}
+
+
+body {
+  background-color: #0D3E45;
+}
+/* Primary Color: */
+
+.primary-0 { color: #1C565E; background-color: #1C565E; border-color: #1C565E }
+.primary-1 { color: #21474C; background-color: #21474C; border-color: #21474C }
+.primary-2 { color: #0D3E45; background-color: #0D3E45; border-color: #0D3E45 }
+.primary-3 { color: #61B4BF; background-color: #61B4BF; border-color: #61B4BF }
+.primary-4 { color: #82B8BF; background-color: #82B8BF; border-color: #82B8BF }
+
+/* Secondary Color A: */
+
+.secondary-a-0 { color: #538927; background-color: #538927; border-color: #538927 }
+.secondary-a-1 { color: #4C6F2E; background-color: #4C6F2E; border-color: #4C6F2E }
+.secondary-a-2 { color: #376512; background-color: #376512; border-color: #376512 }
+.secondary-a-3 { color: #97D068; background-color: #97D068; border-color: #97D068 }
+.secondary-a-4 { color: #ABD08C; background-color: #ABD08C; border-color: #ABD08C }
+
+/* Secondary Color B: */
+
+.secondary-b-0 { color: #892745; background-color: #892745; border-color: #892745 }
+.secondary-b-1 { color: #6F2F42; background-color: #6F2F42; border-color: #6F2F42 }
+.secondary-b-2 { color: #65122B; background-color: #65122B; border-color: #65122B }
+.secondary-b-3 { color: #D06888; background-color: #D06888; border-color: #D06888 }
+.secondary-b-4 { color: #D08CA1; background-color: #D08CA1; border-color: #D08CA1 }
+
+/* Complementary Color: */
+
+.complement-0 { color: #99602C; background-color: #99602C; border-color: #99602C }
+.complement-1 { color: #7C5734; background-color: #7C5734; border-color: #7C5734 }
+.complement-2 { color: #714114; background-color: #714114; border-color: #714114 }
+.complement-3 { color: #D79F6B; background-color: #D79F6B; border-color: #D79F6B }
+.complement-4 { color: #D7B291; background-color: #D7B291; border-color: #D7B291 }
+
+

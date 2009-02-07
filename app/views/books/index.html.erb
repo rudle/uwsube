@@ -21,7 +21,11 @@
         <td> <%=h book.user_id  %> </td>
         <td><%= link_to 'Show', book %></td>
 
+<<<<<<< HEAD:app/views/books/index.html.erb
         <% if !current_user.nil? %>
+=======
+        <% unless current_user.nil? %>
+>>>>>>> send_mail:app/views/books/index.html.erb
           <% if current_user.id == book.user_id %>
             <td>
               <%= link_to 'Edit', edit_book_path(book) %>
