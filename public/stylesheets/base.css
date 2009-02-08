@@ -37,6 +37,10 @@ div#content tr,td,table,th {
   color: #61B4BF
 }
 
+div#content td { 
+  width: 30px;
+}
+
 h1,h2,h3 {
   color : #82B8BF;
   text-align: center;

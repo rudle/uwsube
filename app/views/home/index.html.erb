@@ -9,54 +9,33 @@
 
 <body>
   <div id="content">
+    <h3> Our latest entries </h3>
     <table >
-      <h3> Our latest entries </h3>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Description</th>
+    </tr>
+
+    <% for book in @books %>
       <tr>
         <td><%=h book.title %></td>
         <td><%=h book.author %></td>
         <td><%=h book.isbn %></td>
         <td><%=h book.description %></td>
         <td><%= link_to 'Show', book %></td>
-        <% if !current_user.nil? %>
-          <% if current_user.id == book.user_id %>
-            <td>
-              <%= link_to 'Edit', edit_book_path(book) %>
-            </td>
-            <td>
-              <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
+        <% unless current_user.blank? or current_user.id != book.user_id %>
+          <td>
+            <%= link_to 'Edit', edit_book_path(book) %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
+          </td>
+        </tr>
     <% end %>
-
-  </table>
-  <div class="center"> <%= link_to 'New', new_book_path %> </div>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Description</th>
-      </tr>
-
-      <% for book in @books %>
-        <tr>
-          <td><%=h book.title %></td>
-          <td><%=h book.author %></td>
-          <td><%=h book.isbn %></td>
-          <td><%=h book.description %></td>
-          <td><%= link_to 'Show', book %></td>
-          <% unless current_user.blank? or current_user.id != book.user_id %>
-            <td>
-              <%= link_to 'Edit', edit_book_path(book) %>
-            </td>
-            <td>
-              <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
-    </table>
-    <%= link_to 'New', new_book_path %> 
-  </div>
+  <% end %>
+</table>
+  <%= link_to 'New', new_book_path %> 
+</div>
 </body>
 
