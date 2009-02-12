@@ -1,28 +1,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Books: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'base' %>
-</head>
-<body>
-<div id="navbar">
-<ul id="navbar">
-  <li> <%= link_to 'Books', books_path %>  </li>
-  <li><%=  link_to 'My books', books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?  %>
-  <li><%= link_to 'Login', login_path %>
-  <li><%= link_to 'Sign up', signup_path %>
-</ul>
-</div>
-  <p> <% if logged_in? %> <%= link_to 'Logout', logout_path %>
-  <% else %> <%= link_to 'Login', login_path %> Or <%= link_to 'Signup', signup_path %>
-  <% end %>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Books: <%= controller.action_name %></title>
+    <%= stylesheet_link_tag 'base' %>
 
-<p style="color: green"><%= flash[:notice] %></p>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>jQuery UI Tabs Demo</title>  
+    <link href="base.css" rel="stylesheet" type="text/css" />  
 
-<%= yield  %>
+  </head>
+  <body>
 
-</body>
+    <div id="navsite">
+
+      <h5>Site navigation:</h5>
+
+      <ul>
+        <li><%= link_to 'Home', books_path %> </li>
+        <li><%= link_to 'Books', books_path %>  </li>
+        <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %> </li>
+        <li><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
+        <li><%= link_to 'Sign up', signup_path %> </li> 
+      </ul>
+
+    </div>
+
+    <p style="color: green"><%= flash[:notice] %></p>
+
+    <%= yield  %>
+
+  </body>
 </html>

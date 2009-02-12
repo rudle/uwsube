@@ -1,32 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<%= javascript_include_tag "jquery", "application" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>UWSUBE: UW Student Underground Book Exchange</title>
-  <%= stylesheet_link_tag 'base' %>
-</head>
-<body>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>UWSUBE: UW Student Underground Book Exchange</title>
+    <%= stylesheet_link_tag 'base' %>
+  </head>
+  <body>
 
-<div id="navbar">
-<ul> 
-  <li><%= link_to 'Books', books_path %>  </li>
-  <li><%= link_to 'My books', books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?  %>
-  <li><%= link_to 'Login / Sign up', login_path %>
-</ul>
-</div>
+    <div id="navsite">
+      <!-- For Screen Readers -->
+      <h5>Site navigation:</h5>
 
-<div id="sidenav">
-<form>
-  <%= text_field(:search, nil) %>
-</form>
-</div>
+      <ul>
+        <li><%= link_to 'Home', books_path %> </li>
+        <li><%= link_to 'Books', books_path %>  </li>
+        <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %> </li>
+        <li><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
+      <li><%= link_to 'Sign up', signup_path %> </li> 
+    </li>
+  </ul>
+
+  <div id="sidenav">
+    <form>
+      <%= text_field(:search, nil) %>
+    </form>
+  </div>
 
 
-<p style="color: green"><%= flash[:notice] %></p>
+  <p style="color: green"><%= flash[:notice] %></p>
 
-<%= yield  %>
+  <%= yield  %>
 
 </body>
 </html>
