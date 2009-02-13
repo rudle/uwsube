@@ -21,7 +21,6 @@
       <ul>
         <li><%= link_to 'Home', books_path %> </li>
         <li><%= link_to 'Books', books_path %>  </li>
-        <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %> </li>
         <li><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
         <li><%= link_to 'Sign up', signup_path %> </li> 
       </ul>
