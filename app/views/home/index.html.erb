@@ -1,16 +1,11 @@
 <%= stylesheet_link_tag 'base' %>
 <h1> Welcome to UWSUBE</h1>
-<br />
-<% if !logged_in? %> 
-  <p> <%= link_to 'Login', login_path %> <%= link_to 'Signup', new_user_path %> </p>
-<% else %> 
-  <p> <%= link_to 'Logout', logout_path %> </p>
-<% end %>
 
-<body>
+<body> 
+
   <div id="content">
     <h3> Our latest entries </h3>
-    <table >
+    <table class="search">
       <th>Title</th>
       <th>Author</th>
       <th>ISBN</th>
@@ -32,9 +27,9 @@
             <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
           </td>
         </tr>
+      <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
   <%= link_to 'New', new_book_path %> 
 </div>
 </body>

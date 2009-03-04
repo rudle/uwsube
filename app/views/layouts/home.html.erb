@@ -11,29 +11,33 @@
   </head>
   <body>
 
-    <div id="navsite">
-      <!-- For Screen Readers -->
-      <h5>Site navigation:</h5>
 
-      <ul>
-        <li><%= link_to 'Home', books_path %> </li>
-        <li><%= link_to 'Books', books_path %>  </li>
-        <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %> </li>
-        <li><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
-      <li><%= link_to 'Sign up', signup_path %> </li> 
-    </li>
-  </ul>
+    <div id="container">
 
-  <div id="sidenav">
-    <form>
-      <%= text_field(:search, nil) %>
-    </form>
-  </div>
+      <div id="navsite">
+        <!-- For Screen Readers -->
+        <h5>Site navigation:</h5>
+
+        <ul>
+          <li><%= link_to 'Home', books_path, :id => "current"  %> </li>
+          <li><%= link_to 'Books', books_path %>  </li>
+          <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?) %> </li>
+          <li><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
+          <li><%= link_to 'Sign up', signup_path %> </li> 
+        </ul>
+      </div>
 
 
-  <p style="color: green"><%= flash[:notice] %></p>
+      <div id="left">
+        <form>
+          <p> Quick search </p>
+          <%= text_field(:search, nil) %>
+        </form>
+      </div>
 
-  <%= yield  %>
+      <p style="color: green"><%= flash[:notice] %></p>
 
-</body>
-</html>
+      <%= yield  %>
+
+    </body>
+  </html>
