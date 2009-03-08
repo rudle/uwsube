@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'base' %>
     <title>UWSUBE: UW Student Underground Book Exchange</title>
   </head>
+
   <body>
 
 
@@ -28,25 +29,18 @@
       <div id="subnav">
         <ul> 
           <li style="float:right;"><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
-          <li> <%= link_to 'Sell Book', new_book_path %>
+          <li><%= link_to 'Sell Book', new_book_path %> </li>
           <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %> </li>
         </ul>
       </div>
 
-      <br />
-
-      <div id="left">
-
-        <form>
-          <p> Quick search </p>
-          <%= text_field(:search, nil) %>
-        </form>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
-      </div>
-
       <p style="color: green"><%= flash[:notice] %></p>
+
+      <%= render :partial => "common/search" %>
+
 
       <%= yield  %>
 
-    </body>
-  </html>
+    </div>
+  </body>
+</html>

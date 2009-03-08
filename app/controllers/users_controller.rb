@@ -6,7 +6,10 @@ class UsersController < ApplicationController
       format.html # new.html.erb
     end
   end
- 
+  #GET /users/1/edit
+  def edit
+    @user = User.find(params[:id])
+  end
   def create
     logout_keeping_session!
     @user = User.new(params[:user])

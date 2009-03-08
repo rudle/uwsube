@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     if (params[:search] != nil)
       redirect_to books_path + '?search=' + params[:search].to_s
     end
-    @books = Book.find(:all)
+    @books = Book.find(:all, :order => "created_at DESC", :limit => 5)
   end
 
 end

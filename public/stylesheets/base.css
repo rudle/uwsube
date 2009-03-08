@@ -3,20 +3,23 @@ div#container {
   width:753px;
   margin:0 auto;
 }
+div#content body { 
+  border: 1px solid black;
+}
 
 div#hidden { 
   display:none;
 }
 
 table.search thead td {
-  font-size:12px;
   text-decoration: underline;
   border:1px solid #D4D0C8;
   text-align:center;
 }
 
 table.search {
-  font-size:10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:12px;
   width:100%;
   border:1px solid #D4D0C8;
   border-collapse: collapse;
@@ -25,6 +28,7 @@ table.search {
 
 table.search td {
   padding: 5px;
+  font-size: 12px;
 }
 
 table.search h3 {
@@ -93,8 +97,11 @@ div#left {
   color : #448;
 }
 
+
+
+
 div#left input { 
-  width:100%;
+  width:110px;
 }
 
 div#left p input { 
@@ -113,9 +120,8 @@ div#left p input {
   padding: 3px 0.5em; 
   margin-left: 3px; 
   border: 1px solid #778;
-  border-bottom: none;
-  background: #DDE;
   text-decoration: none;
+  background: white; 
 }
 
 
@@ -149,33 +155,37 @@ div#left p input {
 
 
 #navsite ul li a#current {
-  background: white; 
-  border-bottom: 1px solid white;
+  background: #DDE;
+  border-bottom: 1px solid #DDE;
 }
 
 /* Subnav */
 #subnav td { 
-  padding: 0 0;
-  margin: 0 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
   text-align: left;
 }
 #subnav ul li { 
   list-style: none;
   display: inline;
-  margin: 0; 
+  padding: 0 0;
+  margin: 0 0; 
 }
 
 #subnav ul li a {
-  margin-left: 3px; 
   text-decoration: none;
+  background-color: #DDE;
 }
 #subnav ul { 
-  border-bottom: 1px solid #AAE;
+  background: #DDE;
 }
 #subnav a { 
+  padding-left 2px;
   font: bold 12px Verdana, sans-serif; 
+  background: #DDE;
   color: #448;
   background: white;
+
 }
 
 #subnav li { 

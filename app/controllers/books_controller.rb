@@ -11,7 +11,7 @@ class BooksController < ApplicationController
       if (!params[:uid].nil?)
         @books = Book.find(:all, :conditions => ['user_id = '+ params[:uid].to_s])
       else
-      @books = Book.find :all
+        @books = Book.find :all
       end
     end
     if (@books.size == 0)  
@@ -27,13 +27,14 @@ class BooksController < ApplicationController
     @books = Books.search params[:search]
   end
 
+
   # GET /books/1
   # GET /books/1.xml
   def show
     if (params[:uid].nil?) #Find all books
-      @book = Book.find params[:id]
+      @book = Book.find (:all, :limit => 2)
     else #Find users books
-      @book = Book.find params[:id], :conditions => ['user_id = ?', current_user.id]
+      @book = Book.find (:conditions => ["user_id = ?", params[:uid]])
       flash[:notice] = 'Your books'
     end
 
