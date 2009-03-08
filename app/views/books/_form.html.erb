@@ -1,6 +1,6 @@
 <% form_for(@book) do |f| %>
   <%= f.error_messages %>
-  <div id="menu_title">
+  <div id="content">
     <p>
       <%= f.label :title %>
       <%= f.text_field :title %>
@@ -12,6 +12,10 @@
     <p>
       <%= f.label :isbn %>
       <%= f.text_field :isbn %>
+    </p>
+    <p>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
     </p>
     <p>
       <%= f.label :description %>

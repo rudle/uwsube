@@ -200,37 +200,57 @@ div#left p input {
 }
 
 
+div#content fieldset {
+  margin-bottom: 10px;
+}
+div#content legend {
+  padding: 0 2px;
+  font-weight: bold;
+}
+div#content label {
+  display: inline-block;
+  line-height: 1.8;
+  vertical-align: top;
+}
+div#content fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+div#content fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+div#content fieldset fieldset {
+  border: none;
+  margin: 3px 0 0;
+}
+div#content fieldset fieldset legend {
+  padding: 0 0 5px;
+  font-weight: normal;
+}
+div#content fieldset fieldset label {
+  display: block;
+  width: auto;
+}
+div#content em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+div#content label {
+  width: 120px; /* Width of labels */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #448;
+}
+div#content fieldset fieldset label {
+  margin-left: 123px; /* Width plus 3 (html space) */
+}
 
-/* Primary Color: */
+div#login { 
+}
 
-.primary-0 { color: #1C565E; background-color: #1C565E; border-color: #1C565E }
-.primary-1 { color: #21474C; background-color: #21474C; border-color: #21474C }
-.primary-2 { color: #0D3E45; background-color: #0D3E45; border-color: #0D3E45 }
-.primary-3 { color: #61B4BF; background-color: #61B4BF; border-color: #61B4BF }
-.primary-4 { color: #82B8BF; background-color: #82B8BF; border-color: #82B8BF }
-
-/* Secondary Color A: */
-
-.secondary-a-0 { color: #538927; background-color: #538927; border-color: #538927 }
-.secondary-a-1 { color: #4C6F2E; background-color: #4C6F2E; border-color: #4C6F2E }
-.secondary-a-2 { color: #376512; background-color: #376512; border-color: #376512 }
-.secondary-a-3 { color: #97D068; background-color: #97D068; border-color: #97D068 }
-.secondary-a-4 { color: #ABD08C; background-color: #ABD08C; border-color: #ABD08C }
-
-/* Secondary Color B: */
-
-.secondary-b-0 { color: #892745; background-color: #892745; border-color: #892745 }
-.secondary-b-1 { color: #6F2F42; background-color: #6F2F42; border-color: #6F2F42 }
-.secondary-b-2 { color: #65122B; background-color: #65122B; border-color: #65122B }
-.secondary-b-3 { color: #D06888; background-color: #D06888; border-color: #D06888 }
-.secondary-b-4 { color: #D08CA1; background-color: #D08CA1; border-color: #D08CA1 }
-
-/* Complementary Color: */
-
-.complement-0 { color: #99602C; background-color: #99602C; border-color: #99602C }
-.complement-1 { color: #7C5734; background-color: #7C5734; border-color: #7C5734 }
-.complement-2 { color: #714114; background-color: #714114; border-color: #714114 }
-.complement-3 { color: #D79F6B; background-color: #D79F6B; border-color: #D79F6B }
-.complement-4 { color: #D7B291; background-color: #D7B291; border-color: #D7B291 }
-
-
+div#login label { 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #448;
+}

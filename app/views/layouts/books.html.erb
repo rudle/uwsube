@@ -14,17 +14,7 @@
 
     <div id="container">
 
-      <div id="navsite">
-        <!-- For Screen Readers -->
-        <h5>Site navigation:</h5>
-
-        <ul>
-          <li><%= link_to 'Home', home_path  %> </li>
-          <li><%= link_to 'Books', books_path,  :id => "current" %>  </li>
-          <li><%= link_to 'My UWSUBE', signup_path %> </li> 
-        </ul>
-      </div>
-
+      <%= render :partial => "common/navbar"  %>
 
       <div id="subnav">
         <ul> 
