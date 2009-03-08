@@ -80,9 +80,14 @@ div#content td {
 
 div#left { 
   float: left;
-  width: 202px;
+  width: 150px;
   min-height:440px;
 }
+
+div#left input { 
+  width:120px;
+}
+
 
 /* Navbar */
 #navsite ul li {
@@ -136,12 +141,30 @@ div#left {
   border-bottom: 1px solid white;
 }
 
+#subnav ul { 
+  list-style: none;
+  display: inline;
+}
+
+
+
+#subnav ul li a {
+  margin-left: 3px; 
+  background: #DDE;
+  text-decoration: none;
+  width: 100%;
+}
+
+#subnav a { 
+  font: bold 12px Verdana, sans-serif; 
+  color: #448;
+  width: 778px;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
-
-
 
 
 
