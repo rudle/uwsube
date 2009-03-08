@@ -1,17 +1,10 @@
-<div id="navbar"> 
-<ul> 
-  <li><%= link_to 'My books', (books_path + '?uid[]=' + current_user.id.to_s unless current_user.nil?), :id => "current" %>
-</ul>
-</div>
+<h1>Books </h1>
 
-<h1>Search Results - Books </h1>
 
-<body>
-  <form>
-    <%= text_field(:search, nil, :value => "Search") %>
-  </form>
+<h3 style="margin: 0px 0px 50px 0px;"> Our latest entries </h3>
+<div id="content" >
+  <table class="search">
 
-  <table>
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -21,29 +14,25 @@
     </tr>
 
 
-    <div id="content" >
-      <% for book in @books %>
-        <tr>
-          <td><%=h book.title %></td>
-          <td><%=h book.author %></td>
-          <td><%=h book.isbn %></td>
-          <td><%=h book.description %></td>
-          <td><%=h book.user_id  %> </td>
-          <td><%= link_to 'Show', book %></td>
+    <% for book in @books %>
+      <tr>
+        <td><%=h book.title %></td>
+        <td><%=h book.author %></td>
+        <td><%=h book.isbn %></td>
+        <td><%=h book.description %></td>
+        <td><%=h book.user_id  %> </td>
+        <td><%= link_to 'Show', book %></td>
 
-          <% unless current_user.nil? or current_user.id != book.user_id %>
-            <td>
-              <%= link_to 'Edit', edit_book_path(book) %>
-            </td>
-            <td>
-              <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-            </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-</body>
-<br />
-
-<%= link_to 'New book', new_book_path%> 
+        <% unless current_user.nil? or current_user.id != book.user_id %>
+          <td>
+            <%= link_to 'Edit', edit_book_path(book) %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to 'New', new_book_path %> 
+</div>

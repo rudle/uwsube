@@ -1,41 +1,21 @@
-<%= stylesheet_link_tag 'base' %>
 <h1> Welcome to UWSUBE</h1>
-<br />
-<% if !logged_in? %> 
-  <p> <%= link_to 'Login', login_path %> <%= link_to 'Signup', new_user_path %> </p>
-<% else %> 
-  <p> <%= link_to 'Logout', logout_path %> </p>
-<% end %>
 
-<body>
-  <div id="content">
-    <h3> Our latest entries </h3>
-    <table >
-      <th>Title</th>
-      <th>Author</th>
-      <th>ISBN</th>
-      <th>Description</th>
-    </tr>
+<h3 style="margin: 0px 0px 50px 0px;"> Our latest entries </h3>
+<div id="content">
+  <table class="search">
+    <th>Title</th>
+    <th>Author</th>
+    <th>ISBN</th>
+  </tr>
 
-    <% for book in @books %>
-      <tr>
-        <td><%=h book.title %></td>
-        <td><%=h book.author %></td>
-        <td><%=h book.isbn %></td>
-        <td><%=h book.description %></td>
-        <td><%= link_to 'Show', book %></td>
-        <% unless current_user.blank? or current_user.id != book.user_id %>
-          <td>
-            <%= link_to 'Edit', edit_book_path(book) %>
-          </td>
-          <td>
-            <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-          </td>
-        </tr>
-    <% end %>
+  <% for book in @books %>
+    <tr>
+      <td> <%= link_to book.title, book %> </td>
+      <td><%=h book.author %></td>
+      <td><%=h book.isbn %></td>
+      <td><%=h book.price %>
   <% end %>
 </table>
-  <%= link_to 'New', new_book_path %> 
+<%= link_to 'New', new_book_path %> 
 </div>
-</body>
 

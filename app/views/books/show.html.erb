@@ -1,22 +1,31 @@
-<p>
-  <b>Title:</b>
-  <%=h @book.title %>
-</p>
+<html>
+  <head> 
+  </head>
+  <body>
+    <div id="content">
+      <p>
+        <b>Title:</b>
+        <%=h @book.title %>
+      </p>
 
-<p>
-  <b>Author:</b>
-  <%=h @book.author %>
-</p>
+      <p>
+        <b>Author:</b>
+        <%=h @book.author %>
+      </p>
 
-<p>
-  <b>Isbn:</b>
-  <%=h @book.isbn %>
-</p>
+      <p>
+        <b>Isbn:</b>
+        <%=h @book.isbn %>
+      </p>
 
-<p>
-  <b>Description:</b>
-  <%=h @book.description %>
-</p>
+      <p>
+        <b>Description:</b>
+        <%=h @book.description %>
+      </p>
 
-<%= link_to 'Edit', edit_book_path(@book) unless current_user.blank? or current_user.id != @book.user_id %> 
-<%= link_to 'Back', books_path %>
+      <%= link_to 'Edit', edit_book_path(@book) unless current_user.blank? or current_user.id != @book.user_id %> 
+      <%= link_to 'Destroy', @book, :confirm => 'Are you sure?', :method => :delete  %>
+      <%= link_to 'Back', books_path %>
+    </div>
+  </body>
+</html>
