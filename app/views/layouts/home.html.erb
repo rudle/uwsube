@@ -1,13 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<%= javascript_include_tag "jquery", "application" %>
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>UWSUBE: UW Student Underground Book Exchange</title>
     <%= stylesheet_link_tag 'base' %>
+    <title>UWSUBE: UW Student Underground Book Exchange</title>
   </head>
   <body>
 
@@ -19,18 +17,20 @@
         <h5>Site navigation:</h5>
 
         <ul>
-          <li><%= link_to 'Home', books_path, :id => "current"  %> </li>
+          <li><%= link_to 'Home', home_path, :id => "current"  %> </li>
           <li><%= link_to 'Books', books_path %>  </li>
-          <li><%= link_to 'Sign up', signup_path %> </li> 
+          <li><%= link_to 'My UWSUBE', signup_path %> </li> 
         </ul>
       </div>
 
 
       <div id="subnav">
-        <ul style="width: 100%">
-          <li style="float: right"><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
+        <ul> 
+          <li style="float:right;"><%= link_to_unless(current_user.nil?, 'Logout', { :controller => logout_path} )  do link_to('Login', { :controller => login_path }) end %> </li>
+          <li> <a href"">filler</a></li>
         </ul>
       </div>
+
       <br />
 
       <div id="left">
