@@ -1,11 +1,11 @@
 
 <div id="navsite">
-	<!-- For Screen Readers -->
-	<h5>Site navigation:</h5>
+  <!-- For Screen Readers -->
+  <h5>Site navigation:</h5>
 
-	<ul>
-		<li><%= link_to 'Home', home_path, :id => "current"  %> </li>
-		<li><%= link_to 'Books', books_path %>  </li>
-		<li><%= link_to 'My UWSUBE', new_user_path   %> </li> 
-	</ul>
+  <ul>
+    <li><%= tab_link_to 'Home', home_path  %> </li>
+    <li><%= tab_link_to 'Books', books_path %>  </li>
+    <li><%= tab_link_to 'My UWSUBE', new_user_path   %> </li> 
+  </ul>
 </div>

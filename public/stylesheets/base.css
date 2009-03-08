@@ -180,16 +180,17 @@ div#left p input {
   background: #DDE;
 }
 #subnav a { 
-  padding-left 2px;
+  padding-left: 2px;
   font: bold 12px Verdana, sans-serif; 
   background: #DDE;
   color: #448;
   background: white;
+  padding-right: 0px;
+  margin: 0 0 0 0;
 
 }
 
 #subnav li { 
-  background: white;
 }
 
 
