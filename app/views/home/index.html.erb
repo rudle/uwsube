@@ -1,31 +1,19 @@
 <h1> Welcome to UWSUBE</h1>
 
-
 <h3 style="margin: 0px 0px 50px 0px;"> Our latest entries </h3>
 <div id="content">
   <table class="search">
     <th>Title</th>
     <th>Author</th>
     <th>ISBN</th>
-    <th>Description</th>
   </tr>
 
   <% for book in @books %>
     <tr>
       <td> <%= link_to book.title, book %> </td>
-      <td><%=h book.title %></td>
       <td><%=h book.author %></td>
       <td><%=h book.isbn %></td>
-      <td><%=h book.description %></td>
-      <% unless current_user.blank? or current_user.id != book.user_id %>
-        <td>
-          <%= link_to 'Edit', edit_book_path(book) %>
-        </td>
-        <td>
-          <%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete  %>
-        </td>
-      </tr>
-    <% end %>
+      <td><%=h book.price %>
   <% end %>
 </table>
 <%= link_to 'New', new_book_path %> 

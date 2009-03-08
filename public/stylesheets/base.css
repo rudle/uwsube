@@ -54,6 +54,7 @@ form, label, input {
 }
 
 body { 
+  margin: 10px 0px 0px 0px;
   font-size: 75%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: "#D4D0C8";
@@ -88,10 +89,15 @@ div#left {
   float: left;
   width: 150px;
   min-height:440px;
+  font: bold 12px Verdana, sans-serif; 
+  color : #448;
 }
 
 div#left input { 
   width:100%;
+}
+
+div#left p input { 
 }
 
 
