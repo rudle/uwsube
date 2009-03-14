@@ -30,13 +30,8 @@ class BooksController < ApplicationController
 
   # GET /books/1
   # GET /books/1.xml
-  def show
-    if (params[:uid].nil?) #Find all books
-      @book = Book.find (:all, :limit => 2)
-    else #Find users books
-      @book = Book.find (:conditions => ["user_id = ?", params[:uid]])
-      flash[:notice] = 'Your books'
-    end
+  def show #Show one book with a given id
+    @book = Book.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -104,5 +99,11 @@ class BooksController < ApplicationController
       format.html { redirect_to(books_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def contact_seller 
+    @book = Book.find(params[:id])
+    @seller = User.find(@book.user_id)
+    Postman.deliver_contact_seller("Hello", @book, @seller)
   end
 end
