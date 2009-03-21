@@ -13,5 +13,9 @@ class Book < ActiveRecord::Base
     indexes :description
   end
 
+  def contact_seller
+    Postman.deliver_contact_seller("Hello", self)
+  end
+
 
 end

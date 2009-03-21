@@ -6,7 +6,8 @@ class Postman < ActionMailer::Base
     body :user => user
   end
 
-  def contact_seller(message, book, seller)
+  def contact_seller(message, book)
+    seller = User.find(book.user_id)
     recipients seller.email
     from "webmaster@example.com"
     subject "Someone is interested in your book on UWSUBE"
