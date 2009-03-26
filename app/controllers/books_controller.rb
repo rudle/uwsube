@@ -7,18 +7,18 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.xml
   def index
+    @wishlist_item = WishlistItem.new
     if (!params[:search].nil?) 
-      @books = Book.paginate_by_title :page => params[:page], :order => 'created_at DESC'
+      @books = Book.search params[:search], :page => params[:page]
     else 
       if (!params[:uid].nil?)
       @books = Book.paginate :page => params[:page], :order => 'created_at DESC'
       else
-      @books = Book.paginate :page => params[:page], :order => 'created_at DESC'
+      @books = Book.search "Inventore", :page => params[:page]
       end
     end
     if (@books.size == 0)  
     else
-        @wishlist_item = WishlistItem.new
         respond_to do |format|
         format.html # index.html.erb
       format.xml  { render :xml => @books }
@@ -108,6 +108,7 @@ class BooksController < ApplicationController
   def contact_seller 
     @book = Book.find(params[:id])
     @seller = User.find(@book.user_id)
-    Postman.deliver_contact_seller("Hello", @book, @seller)
+    Postman.deliver_contact_seller("Hello", @book)
   end
+
 end
