@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090308045302) do
+ActiveRecord::Schema.define(:version => 20090322161120) do
 
   create_table "books", :force => true do |t|
     t.string   "title",       :null => false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(:version => 20090308045302) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+  end
+
+  create_table "wishlist_items", :force => true do |t|
+    t.string   "isbn",       :null => false
+    t.datetime "expiry"
+    t.integer  "user_id"
+    t.integer  "max_price"
+    t.datetime "created_at", :null => false
+    t.string   "title",      :null => false
   end
 
 end

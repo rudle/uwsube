@@ -1,4 +1,6 @@
+require 'will_paginate'
 class BooksController < ApplicationController
+
   before_filter :login_required, :only => :new
   before_filter :store_location
 
@@ -6,16 +8,17 @@ class BooksController < ApplicationController
   # GET /books.xml
   def index
     if (!params[:search].nil?) 
-      @books = Book.search params[:search]
+      @books = Book.paginate_by_title :page => params[:page], :order => 'created_at DESC'
     else 
       if (!params[:uid].nil?)
-        @books = Book.find(:all, :conditions => ['user_id = '+ params[:uid].to_s])
+      @books = Book.paginate :page => params[:page], :order => 'created_at DESC'
       else
-        @books = Book.find :all
+      @books = Book.paginate :page => params[:page], :order => 'created_at DESC'
       end
     end
     if (@books.size == 0)  
     else
+        @wishlist_item = WishlistItem.new
         respond_to do |format|
         format.html # index.html.erb
       format.xml  { render :xml => @books }
@@ -36,6 +39,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @book }
+      format.js { alert("hello") }
     end
   end
 

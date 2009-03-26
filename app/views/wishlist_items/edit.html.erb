@@ -1,0 +1,12 @@
+<h1>Editing wishlist_items</h1>
+
+<% form_for(@wishlist_items) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @wishlist_items %> |
+<%= link_to 'Back', wishlist_items_path %>

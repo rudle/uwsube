@@ -1,10 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :wishlist_items
+
 
   map.home '', :controller => 'home', :action => 'index'
 
   map.resources :users
   map.resource :session
   map.resources :books
+  map.resources :wishlist_items
   #map.resources :books, :path_prefix => "/users/:user_id" 
 
   map.signup '/signup', :controller => 'users', :action => 'new'
@@ -15,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users do |user|
       user.resources :books
+      user.resources :wishlist_items
   end
 
 

@@ -1,9 +1,9 @@
 <h1>Books </h1>
 
-
+<%= javascript_include_tag :defaults %>
 <h3 style="margin: 0px 0px 50px 0px;"> Our latest entries </h3>
 <div id="content" >
-  <table class="search">
+  <table class="search" id="results">
 
     <tr>
       <th>Title</th>
@@ -19,7 +19,50 @@
         <td><%=h book.author %></td>
         <td><%=h book.isbn %></td>
         <td><%=h book.price %></td>
-      <% end %>
-    </table>
-    <%= link_to 'New', new_book_path %> 
+      </tr>
+    <% end %>
+  </table>
+
+  <div id="pagination">
+    <%= will_paginate @books %>
   </div>
+  <%= link_to 'New', new_book_path %> 
+
+  <div id="wishlist_form">
+    <h3>Add to Wishlist</h3>
+    <p> Don't like your results? Let us tell you if anybody else lists a copy of this book!</p>
+
+
+    <% form_for(@wishlist_item) do |f| %>
+      <%= f.error_messages %>
+
+      <div id="content">
+
+        <p>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </p>
+        <p>
+          <%= f.label :isbn %>
+          <%= f.text_field :isbn %>
+        </p>
+
+        <p>
+          <%= f.label :max_price %>
+          <%= f.text_field :max_price %>
+        </p>
+
+        <p>
+          <%= f.label 'Stop Notifying me after' %>
+          <%= f.date_select :expiry %>
+        </p>
+
+        <p>
+          <%= f.submit "Create" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>

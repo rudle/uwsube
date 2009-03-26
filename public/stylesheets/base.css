@@ -19,7 +19,7 @@ table.search thead td {
 
 table.search {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size:12px;
+  font-size:16px;
   width:100%;
   border:1px solid #D4D0C8;
   border-collapse: collapse;
@@ -28,7 +28,7 @@ table.search {
 
 table.search td {
   padding: 5px;
-  font-size: 12px;
+  font-size: 55px;
 }
 
 table.search h3 {
@@ -54,14 +54,14 @@ form, label, input {
   margin: 0px auto;
   float:center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: "#D4D0C8";
+  background-color: "#D4D0C8";
 }
 
 body { 
   margin: 10px 0px 0px 0px;
   font-size: 75%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: "#D4D0C8";
+  background-color: "#D4D0C8";
 }
 
 
@@ -83,10 +83,14 @@ div#content tr {
 div#content td {
   border-bottom: 1px solid #D4D0C8; /* light grey */
   padding-bottom: 2px;
-  font-size:10px;
+  font-size:14px;
   width:778px;
   margin: 0px auto;
 
+}
+
+div#pagination  { 
+  font: bold 14px Verdana, sans-serif; 
 }
 
 div#left { 

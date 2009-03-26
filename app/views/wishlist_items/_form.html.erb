@@ -1,0 +1,26 @@
+<h1>New wishlist_items</h1>
+
+<% form_for(@wishlist_item) do |f| %>
+<% end %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :isbn %>
+    <%= f.text_field :isbn %>
+  </p>
+
+  <p>
+    <%= f.label :max_price %>
+    <%= f.text_field :max_price %>
+  </p>
+
+  <p>
+    <%= f.label 'Stop Notifying me after' %>
+    <%= f.date_select :expiry %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+
+<%= link_to 'Back', wishlist_items_path %>

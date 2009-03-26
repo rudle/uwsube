@@ -15,19 +15,19 @@ module ThinkingSphinx
     end
     
     def attribute_name
-      @attribute_name ||= case @reference
-      when Attribute
-        @reference.unique_name.to_s
-      when Field
-        @reference.unique_name.to_s + "_sort"
-      end
+      # @attribute_name ||= case @reference
+      # when Attribute
+      #   @reference.unique_name.to_s
+      # when Field
+      @attribute_name ||= @reference.unique_name.to_s + "_facet"
+      # end
     end
     
     def value(object, attribute_value)
       return translate(object, attribute_value) if @reference.is_a?(Field)
       
       case @reference.type
-      when :string, :multi
+      when :string
         translate(object, attribute_value)
       when :datetime
         Time.at(attribute_value)
