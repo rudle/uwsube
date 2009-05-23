@@ -11,7 +11,7 @@ module ThinkingSphinx
     
     def concatenate(clause, separator = ' ')
       clause.split(', ').collect { |field|
-        "COALESCE(CAST(#{field} as varchar), '')"
+        field[/COALESCE/] ? field : "COALESCE(CAST(#{field} as varchar), '')"
       }.join(" || '#{separator}' || ")
     end
     
@@ -41,7 +41,8 @@ module ThinkingSphinx
       value ? 'TRUE' : 'FALSE'
     end
     
-    def crc(clause)
+    def crc(clause, blank_to_null = false)
+      clause = "NULLIF(#{clause},'')" if blank_to_null
       "crc32(#{clause})"
     end
     

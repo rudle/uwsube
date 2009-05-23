@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(:version => 20090322161120) do
     t.float    "price"
   end
 
-  add_index "books", ["user_id"], :name => "fk_books_user_id"
-
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
     t.string   "name",                      :limit => 100, :default => ""

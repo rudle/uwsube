@@ -36,6 +36,12 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
+  config.gem(
+    'freelancing-god-thinking-sphinx',
+    :lib => 'thinking_sphinx',
+    :version => '1.1.12'
+  )
+
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)
   # config.log_level = :debug

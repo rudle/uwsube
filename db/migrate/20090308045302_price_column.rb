@@ -1,6 +1,6 @@
 class PriceColumn < ActiveRecord::Migration
   def self.up
-    add_column "books", "price", :double
+    add_column "books", "price", :real
   end
 
   def self.down

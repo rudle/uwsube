@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if success && @user.errors.empty?
       self.current_user = @user # !! now logged in
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up! You are now logged in as #{@user.to_s}" 
+      flash[:notice] = "Thanks for signing up! You are now logged in as #{@user}" 
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
